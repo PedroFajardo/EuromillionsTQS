@@ -3,7 +3,7 @@ pipeline {
  
     tools {
         jdk 'jdk8'   
-        maven 'mvn3'
+        maven 'maven'
     }
  
     stages {
@@ -13,7 +13,8 @@ pipeline {
             }
             post {
                 always {
-                    junit '**/target/*-reports/TEST-*.xml'
+                #    junit '**/target/*-reports/TEST-*.xml'
+				    junit 'target/reports/TEST-*.xml'
                 }
             }
         }
